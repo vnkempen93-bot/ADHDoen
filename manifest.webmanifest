@@ -1,0 +1,22 @@
+{
+  "name": "ADHDoen",
+  "short_name": "ADHDoen",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#f4f7ff",
+  "theme_color": "#2563eb",
+  "description": "Een persoonlijke taken-, agenda- en reflectie-app die je op je telefoon kunt installeren",
+  "categories": ["productivity", "lifestyle"],
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
