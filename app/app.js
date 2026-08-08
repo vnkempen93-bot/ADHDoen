@@ -207,8 +207,8 @@ const habitsList = document.getElementById('habits-list');
 const installButton = document.getElementById('install-btn');
 const installStatus = document.getElementById('install-status');
 const emotionsImage = document.getElementById('emoties-image');
-const emotiesOverlay = document.getElementById('emoties-overlay');
-const emotiesCountList = document.getElementById('emoties-count-list');
+const emotionsOverlay = document.getElementById('emoties-overlay');
+const emotionsCountList = document.getElementById('emoties-count-list');
 const comparisonGallery = document.getElementById('comparison-gallery');
 const comparisonHistoryTitle = document.getElementById('comparison-history-title');
 const comparisonHistorySubtitle = document.getElementById('comparison-history-subtitle');
@@ -552,15 +552,15 @@ if (habitForm) {
   });
 }
 
-if (emotiesOverlay) {
+if (emotionsOverlay) {
   renderEmotionsOverlay();
   renderEmotionsCountList();
-  emotiesOverlay.addEventListener('click', handleEmotionsOverlayClick);
-  if (emotiesCountList) {
-    emotiesCountList.addEventListener('click', handleEmotionsCountListClick);
+  emotionsOverlay.addEventListener('click', handleEmotionsOverlayClick);
+  if (emotionsCountList) {
+    emotionsCountList.addEventListener('click', handleEmotionsCountListClick);
   }
-  if (emotiesImage) {
-    emotiesImage.addEventListener('load', renderEmotionsOverlay);
+  if (emotionsImage) {
+    emotionsImage.addEventListener('load', renderEmotionsOverlay);
   }
 }
 
@@ -1241,9 +1241,9 @@ function handleEmotionsCountListClick(event) {
 }
 
 function renderEmotionsOverlay() {
-  if (!emotiesOverlay) return;
+  if (!emotionsOverlay) return;
 
-  emotiesOverlay.innerHTML = EMOTION_BOXES.map((box) => {
+  emotionsOverlay.innerHTML = EMOTION_BOXES.map((box) => {
     const count = emotionsStats.counts[box.id] || 0;
     const isSelected = !!emotionsStats.selected[box.id];
     const tunedX = box.x + EMOTION_BOX_TUNE.x;
@@ -1266,9 +1266,9 @@ function renderEmotionsOverlay() {
 }
 
 function renderEmotionsCountList() {
-  if (!emotiesCountList) return;
+  if (!emotionsCountList) return;
 
-  emotiesCountList.innerHTML = EMOTION_BOXES.map((box) => {
+  emotionsCountList.innerHTML = EMOTION_BOXES.map((box) => {
     const count = emotionsStats.counts[box.id] || 0;
     const isSelected = !!emotionsStats.selected[box.id];
     const history = Array.isArray(emotionsStats.history?.[box.id]) ? emotionsStats.history[box.id] : [];
